@@ -64,11 +64,10 @@
                         <div class="card-block">
                             <h2>Adam Engebretson</h2>
                             <p class="card-text">Wow, this class is amazing! @Otc #webdev2</p>
-                                   <i class="fa fa-fw fa-comment-o comment"> </i> 32
+                                   <i class="fa fa-fw fa-comment-o comment"></i> 32
                                     <i class="fa fa-fw fa-retweet retweet" ></i> 1.1k
                                     <i class="fa fa-fw fa-heart heart"></i> 50
-                                    <i class="fa fa-fw fa-envelope-o message"></i>
-                                   
+                                    <i class="fa fa-fw fa-envelope-o message"></i>   
                         </div>
                     </div>
                 </div>
@@ -110,48 +109,16 @@
 
 
 <script>
-const showMessage = () => 
-{
-  alert("are you sure you like this?");
-};
-
-const likeButton = document.getElementsByClassName("heart");
-likeButton[0].addEventListener("click",e)
-
-
-{
-let currentCount = likeButton.nextSibling.textContent
-newCount = parseInt(currentCount) +1
-
-
-
-}
-
-
+ const counter = () =>
+    {
+      let currentCount = likeButton[0].nextSibling.textContent
+      let newCount = parseInt(currentCount) +1
+      likeButton[0].nextSibling.textContent = newCount
+    };
+    let likeButton = document.getElementsByClassName("heart");
+    likeButton[0].addEventListener("click",counter)
 </script>
 
 
   </body>
 </html>
-<!--
-const commentButton = document.getElementsByClassName("comment");
-commentButton[0].addEventListener("click", showMessage);
-
-const retweetButton = document.getElementsByClassName("retweet");
-retweetButton[1].addEventListener("click", showMessage);
-
-
-const likeButton = document.getElementsByClassName("heart");
-likeButton[3].addEventListener("click", showMessage);
-
-let currentCount = likeButton.nextSibling.textContent
-currentCount = parseInt(currentCount) +1
-newCount = parseInt(currentCount) 
-
-likeButton.nextSibling.textContent = newCount
-}
-
-
-
-
--->

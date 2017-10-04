@@ -64,9 +64,9 @@
                         <div class="card-block">
                             <h2>Adam Engebretson</h2>
                             <p class="card-text">Wow, this class is amazing! @Otc #webdev2</p>
-                                   <i class="fa fa-fw fa-comment-o comment"></i> 0
-                                    <i class="fa fa-fw fa-retweet retweet" ></i> 0
-                                    <i class="fa fa-fw fa-heart heart"></i> <span> 0 <span>
+                                   <i class="fa fa-fw fa-comment-o button"></i> <span> 0 </span>
+                                    <i class="fa fa-fw fa-retweet button" ></i> <span> 0 </span>
+                                    <i class="fa fa-fw fa-heart button"></i> <span> 0 </span>
                                     <i class="fa fa-fw fa-envelope-o message"></i>   
                         </div>
                     </div>
@@ -111,14 +111,11 @@
     //debugger
     $(function()
     {
-        $('.heart').click(event =>
+        $('.button').click(event =>
         {
             let currentCount =  $(event.target).next().text()
             let newCount = parseInt(currentCount) + 1
-            console.log(newCount);
             $(event.target).next().text(newCount)
-           // $(event.target).text() = currentCount;
-            console.log(currentCount);
         })
     })
 

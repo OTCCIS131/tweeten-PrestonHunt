@@ -50,25 +50,27 @@
                         Featured
                     </div>
                     <div class="card-block">
-                        <h4 class="card-title">Compose new tweet</h4>
-                        <div class="form-group">
-                            <label for="comment">Comment:</label>
-                            <textarea class="form-control" rows="5" id="comment"></textarea>
-                        </div>  
-                        <button type="button" class="btn btn-info float-left">Info</button>
-                        <button type="button" class="btn btn-info float-left">Info</button>
-                        <a href="#" class="btn btn-primary float-right">Tweet</a>
+                            <h4 class="card-title">Compose new tweet</h4>
+                            <div class="form-group">
+                                <label for="comment">Comment:</label>
+                                <textarea class="form-control" rows="5" id="comment"></textarea>
+                            </div>  
+                            <button type="button" class="btn btn-info float-left">Info</button>
+                            <button type="button" class="btn btn-info float-left">Info</button>
+                            <a href="#" class="btn btn-primary float-right tweet">Tweet</a>
                     </div>
                     </div>
-                    <div class="card">
-                        <div class="card-block">
-                            <h2>Adam Engebretson</h2>
-                            <p class="card-text">Wow, this class is amazing! @Otc #webdev2</p>
-                                   <i class="fa fa-fw fa-comment-o button"></i> <span> 0 </span>
-                                    <i class="fa fa-fw fa-retweet button" ></i> <span> 0 </span>
-                                    <i class="fa fa-fw fa-heart button"></i> <span> 0 </span>
-                                    <i class="fa fa-fw fa-envelope-o message"></i>   
-                        </div>
+                    <div class="card tweets">
+                        <form class="form">
+                            <div class="card-block">
+                                <h2>Adam Engebretson</h2>
+                                <p class="card-text">Wow, this class is amazing! @Otc #webdev2</p>
+                                    <i class="fa fa-fw fa-comment-o button"></i> <span> 0 </span>
+                                        <i class="fa fa-fw fa-retweet button" ></i> <span> 0 </span>
+                                        <i class="fa fa-fw fa-heart button"></i> <span> 0 </span>
+                                        <i class="fa fa-fw fa-envelope-o message"></i>   
+                            </div>
+                        </form>
                     </div>
                 </div>
 
@@ -116,6 +118,17 @@
             let currentCount =  $(event.target).next().text()
             let newCount = parseInt(currentCount) + 1
             $(event.target).next().text(newCount)
+        })
+    })
+
+    $(function()
+    {
+        $('.tweet').click(event =>
+        {
+            const formElement = document.getElementsByClassName('form')
+            console.log(formElement[0])
+            var tweets = document.getElementsByClassName('tweets')
+            tweets[0].appendChild(formElement)
         })
     })
 

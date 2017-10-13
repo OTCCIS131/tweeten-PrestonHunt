@@ -65,11 +65,11 @@
                         <a href="#" class="btn btn-primary float-right tweet">Tweet</a>
                     </div>
                 </div>
-                <div class="card tweets">
+                <div class="card tweets" id = 'tweets'>
                     <form class="form">
-                        <div class="card-block">
+                        <div class="card-block" id="tweet">
                             <h2>Adam Engebretson</h2>
-                            <p class="card-text">Wow, this class is amazing! @Otc #webdev2</p>
+                            <p class="card-text"> <span class="comment">this class is amazing! @Otc #webdev2 </span></p>
                             <i class="fa fa-fw fa-comment-o button"></i> <span> 0 </span>
                             <i class="fa fa-fw fa-retweet button"></i> <span> 0 </span>
                             <i class="fa fa-fw fa-heart button"></i> <span> 0 </span>
@@ -127,33 +127,17 @@
             })
         })
 
+       
         $(function () {
             $('.tweet').click(event => {
-                const formElement = document.getElementsByClassName('form')
-                console.log(formElement[0])
-                //var tweets = document.getElementsByClassName('tweets')
-                $('.tweets').append(formElement[0])
+                let formElement = $("div:last-child",$('#tweets')).clone()
+                let userComment = $("[id=comment]",$(this))
+                let tweet = userComment.val()
+                $('.comment',formElement).text(tweet)
+                $('#tweets').prepend(formElement[0])
             })
         })
 
-
-    //  const counter = () =>
-    //     {
-    //       let currentCount = likeButton[0].nextSibling.textContent
-    //       let newCount = parseInt(currentCount) +1
-    //       likeButton[0].nextSibling.textContent = newCount
-    //       retweet[0].nextSibling.textContent = newCount
-
-    //     };
-    //     let likeButton = document.getElementsByClassName("heart");
-    //     likeButton[0].addEventListener("click",counter);
-
-    //     let retweet = document.getElementsByClassName("retweet");
-    //     retweet[0].addEventListener("click",counter);
-
-    // $( "retweet" ).click(function() {
-    //   $( this.next.textContent ).showMessage();
-    // });
     </script>
 
 
